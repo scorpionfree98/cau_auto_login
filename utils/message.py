@@ -55,6 +55,8 @@ def my_post(url, data, stop_warning=False):
 
 def send_excel_online(msg, datetime, user="", ip_address=""):
     hiflow_redirect_url = HIFLOW_REDIR_URL
+    if hiflow_redirect_url == "":
+        return
     data = {"msg": msg, "datetime": datetime, "user": user, "ip_address": ip_address}
     my_post(hiflow_redirect_url, data)
 
@@ -75,6 +77,8 @@ def send_wechat_message(
 
     data = {"key": COMPANY_REDIR_SCKEY, "msg": "Hello, World!", "mobile": mobile}
     company_url = COMPANY_REDIR_URL
+    if company_url == "":
+        return
 
     if msg_type == "textcard":
         msg_title = content.get("title", None)
