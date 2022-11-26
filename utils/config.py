@@ -18,7 +18,7 @@ class Config:
                 self.config["profile"] if "profile" in self.config.sections() else None
             )
         else:
-            profile is None
+            profile = None
         if profile is None:
             username = input("请输入学号/工号：")
             password = input("请输入密码：")
@@ -39,13 +39,13 @@ class Config:
                 self.config["message"] if "message" in self.config.sections() else None
             )
         else:
-            message is None
+            message = None
         if message is None:
-            default_attention_phone = input("请输入报错时，企业微信联系人手机号：")
-            company_redir_sckey = input("请输入中转企业微信密钥：")
-            company_redir_url = input("企业微信中转网址：")
-            server_jiang_url = input("请输入Server酱网址：")
-            hiflow_redir_url = input("Hiflow中转网址：")
+            default_attention_phone = input("请输入报错时，企业微信联系人手机号(可以不填)：")
+            company_redir_sckey = input("请输入中转企业微信密钥(可以不填)：")
+            company_redir_url = input("企业微信中转网址(可以不填)：")
+            server_jiang_url = input("请输入Server酱网址(可以不填)：")
+            hiflow_redir_url = input("Hiflow中转网址(可以不填)：")
             message = {}
             message["default_attention_phone"] = default_attention_phone
             message["company_redir_sckey"] = company_redir_sckey
